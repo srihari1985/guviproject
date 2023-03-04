@@ -1,8 +1,8 @@
 node {
     checkout scm
-    withCredentials([usernameColonPassword(credentialsId: 'DOCKER_CREDENTIALS')]) {
+    withCredentials([usernamePassword(credentialsId: 'DOCKER_CREDENTIALS', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
     sh '''
-    docker login -u "${DOCKER_CREDENTIALS_USERNAME}" -p "${DOCKER_CREDENTIALS_PASSWORD}"
+    docker login -u "${USERNAME}" -p "${PASSWORD}"
     docker build . -t srihari1985/dev:latest
     docker push srihari1985/dev:latest
     '''
