@@ -1,6 +1,6 @@
 node {
     checkout scm
     sh '''
-   docker ps
+    docker build .
     '''
 }
