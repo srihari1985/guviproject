@@ -1,3 +1,6 @@
 node {
-    sh "echo 'Hello World'"
+    checkout scm
+    sh '''
+    sudo docker ps
+    '''
 }
