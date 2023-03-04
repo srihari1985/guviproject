@@ -1,6 +1,6 @@
 node {
     checkout scm
     sh '''
-    sudo docker ps
+   docker ps
     '''
 }
