@@ -1,4 +1,5 @@
 node {
+
     checkout scm
     withCredentials([usernamePassword(credentialsId: 'DOCKER_CREDENTIALS', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
     sh '''
